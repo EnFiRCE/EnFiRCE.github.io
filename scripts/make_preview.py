@@ -27,7 +27,7 @@ panel.paste(src, (px, py))
 canvas.paste(panel, (440, 90))
 
 try:
-    title_font = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 72)
+    title_font = ImageFont.truetype("C:/Windows/Fonts/segoeuib.ttf", 56)
     sub_font = ImageFont.truetype("C:/Windows/Fonts/segoeui.ttf", 26)
     small_font = ImageFont.truetype("C:/Windows/Fonts/segoeui.ttf", 20)
 except OSError:
@@ -35,10 +35,10 @@ except OSError:
     sub_font = title_font
     small_font = title_font
 
-draw.text((56, 150), "FiRCE", font=title_font, fill="#f8fafc")
+draw.text((56, 150), "EnFiRCE", font=title_font, fill="#f8fafc")
 draw.text(
-    (56, 240),
-    "Friction-informed\nRod Contact\nEstimation",
+    (56, 230),
+    "Environment- and\nFriction-informed\nRod Contact Estimation",
     font=sub_font,
     fill="#93c5fd",
     spacing=8,

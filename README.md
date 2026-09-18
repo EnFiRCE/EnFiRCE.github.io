@@ -1,8 +1,8 @@
-# FiRCE
+# EnFiRCE
 
-**FiRCE** (*Friction-informed Rod Contact Estimation*) is the project page for a Georgia Tech simulation study on recovering contact and tip forces on a slender continuum rod from sparse shape measurements and planar environment constraints.
+**EnFiRCE** (*Environment- and Friction-informed Rod Contact Estimation*) is the project page for a Georgia Tech simulation study on recovering contact and tip forces on a slender continuum rod from sparse shape measurements and planar environment constraints.
 
-- Live page: https://universeleaf.github.io/firce.github.io/
+- Live page: https://enfirce.github.io/
 - MATLAB code: https://github.com/universeleaf/force-sensor
 
 This repository is a static GitHub Pages site, adapted from the [Academic Project Page Template](https://github.com/eliahuhorwitz/Academic-project-page-template) / [Nerfies](https://nerfies.github.io/).

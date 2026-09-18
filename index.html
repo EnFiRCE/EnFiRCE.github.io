@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta name="title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta name="title" content="EnFiRCE: Environment- and Friction-informed Rod Contact Estimation">
   <meta name="description" content="Estimate contact and tip forces on a slender continuum rod from sparse shape measurements, base motion, and planar environment constraints.">
   <meta name="keywords" content="continuum robot, force sensing, friction, complementarity, EKF, MAP, FBG, rod contact, Georgia Tech">
   <meta name="author" content="Tongyu Wang">
@@ -13,13 +13,13 @@
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="Georgia Institute of Technology">
-  <meta property="og:title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta property="og:title" content="EnFiRCE: Environment- and Friction-informed Rod Contact Estimation">
   <meta property="og:description" content="Estimate contact and tip forces on a slender continuum rod from sparse shape measurements and environment constraints.">
-  <meta property="og:url" content="https://universeleaf.github.io/firce.github.io/">
-  <meta property="og:image" content="https://universeleaf.github.io/firce.github.io/static/images/social_preview.png">
+  <meta property="og:url" content="https://enfirce.github.io/">
+  <meta property="og:image" content="https://enfirce.github.io/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="FiRCE hooked-rod force estimation result">
+  <meta property="og:image:alt" content="EnFiRCE hooked-rod force estimation result">
   <meta property="article:published_time" content="2026-09-18T00:00:00.000Z">
   <meta property="article:author" content="Tongyu Wang">
   <meta property="article:section" content="Research">
@@ -27,17 +27,17 @@
   <meta property="article:tag" content="force sensing">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta name="twitter:title" content="EnFiRCE: Environment- and Friction-informed Rod Contact Estimation">
   <meta name="twitter:description" content="Sparse shape + environment constraints for rod contact and tip force estimation.">
-  <meta name="twitter:image" content="https://universeleaf.github.io/firce.github.io/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="FiRCE hooked-rod force estimation result">
+  <meta name="twitter:image" content="https://enfirce.github.io/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="EnFiRCE hooked-rod force estimation result">
 
-  <meta name="citation_title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta name="citation_title" content="EnFiRCE: Environment- and Friction-informed Rod Contact Estimation">
   <meta name="citation_author" content="Wang, Tongyu">
   <meta name="citation_publication_date" content="2026">
   <meta name="theme-color" content="#0f172a">
 
-  <title>FiRCE: Friction-informed Rod Contact Estimation</title>
+  <title>EnFiRCE: Environment- and Friction-informed Rod Contact Estimation</title>
   <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
   <link rel="icon" type="image/png" href="static/images/favicon.png">
   <link rel="apple-touch-icon" href="static/images/favicon.png">
@@ -63,7 +63,7 @@
   {
     "@context": "https://schema.org",
     "@type": "ScholarlyArticle",
-    "headline": "FiRCE: Friction-informed Rod Contact Estimation",
+    "headline": "EnFiRCE: Environment- and Friction-informed Rod Contact Estimation",
     "description": "Estimate contact and independent tip forces on a slender continuum rod from sparse curvature measurements and planar environment constraints.",
     "author": [{
       "@type": "Person",
@@ -71,8 +71,8 @@
       "affiliation": {"@type": "Organization", "name": "Georgia Institute of Technology"}
     }],
     "datePublished": "2026-09-18",
-    "url": "https://universeleaf.github.io/firce.github.io/",
-    "image": "https://universeleaf.github.io/firce.github.io/static/images/social_preview.png",
+    "url": "https://enfirce.github.io/",
+    "image": "https://enfirce.github.io/static/images/social_preview.png",
     "keywords": ["continuum robot", "force sensing", "friction", "complementarity", "EKF"],
     "isAccessibleForFree": true
   }
@@ -90,7 +90,7 @@
         <div class="columns is-centered">
           <div class="column has-text-centered">
             <h1 class="title is-1 publication-title">
-              <span class="acronym">FiRCE</span>: Friction-informed Rod Contact Estimation
+              <span class="acronym">EnFiRCE</span>: Environment- and Friction-informed Rod Contact Estimation
             </h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
@@ -136,7 +136,7 @@
           <source src="static/videos/teaser.mp4" type="video/mp4">
         </video>
         <h2 class="subtitle has-text-centered">
-          A hooked 200&nbsp;mm rod is pushed into a ceiling plane and then slid. FiRCE recovers contact force, friction, and an unknown tip load from sparse simulated FBG curvature, without using dense true shape history.
+          A hooked 200&nbsp;mm rod is pushed into a ceiling plane and then slid. EnFiRCE recovers contact force, friction, and an unknown tip load from sparse simulated FBG curvature, without using dense true shape history.
         </h2>
       </div>
     </div>
@@ -152,10 +152,10 @@
               A slender continuum rod bends when it touches an object. We want the forces that the object exerts on the rod, using only sparse bending measurements, commanded base motion, and a geometric model of the contact surface — not a force sensor at the contact.
             </p>
             <p>
-              <span class="acronym">FiRCE</span> (Friction-informed Rod Contact Estimation) treats this as a constrained inverse problem. Simulated fiber Bragg grating (FBG) samples are interpolated relative to a calibrated intrinsic curvature, then a constrained MAP / iterated EKF update estimates contact location, a polyhedral Coulomb friction force, and an independent tip load. Unilateral contact and friction complementarity are enforced when the data can resolve stick versus slip. When paired curvature noise makes that mode unidentifiable, the estimator keeps the friction cone but withholds exact tangential kinematics and flags the frame for review.
+              <span class="acronym">EnFiRCE</span> (Environment- and Friction-informed Rod Contact Estimation) treats this as a constrained inverse problem. Simulated fiber Bragg grating (FBG) samples are interpolated relative to a calibrated intrinsic curvature, then a constrained MAP / iterated EKF update estimates contact location, a polyhedral Coulomb friction force, and an independent tip load. Unilateral contact and friction complementarity are enforced when the data can resolve stick versus slip. When paired curvature noise makes that mode unidentifiable, the estimator keeps the friction cone but withholds exact tangential kinematics and flags the frame for review.
             </p>
             <p>
-              On calibrated, noise-free planar simulations, FiRCE recovers contact and tip forces on the hooked-rod trajectory to about 0.016&nbsp;N RMSE, and it separates a nonzero unknown tip load from body contact. A synthetic metric-depth frontend can supply the plane with covariance. All numbers on this page are offline simulations. They are not a hardware, real-time, or publication-ready claim.
+              On calibrated, noise-free planar simulations, EnFiRCE recovers contact and tip forces on the hooked-rod trajectory to about 0.016&nbsp;N RMSE, and it separates a nonzero unknown tip load from body contact. A synthetic metric-depth frontend can supply the plane with covariance. All numbers on this page are offline simulations. They are not a hardware, real-time, or publication-ready claim.
             </p>
           </div>
         </div>
@@ -166,7 +166,7 @@
   <section class="section" id="method">
     <div class="container is-max-desktop">
       <h2 class="title is-3 has-text-centered">Method</h2>
-      <svg class="pipeline" viewBox="0 0 960 168" role="img" aria-label="FiRCE pipeline from sparse sensors to estimated forces">
+      <svg class="pipeline" viewBox="0 0 960 168" role="img" aria-label="EnFiRCE pipeline from sparse sensors to estimated forces">
         <defs>
           <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
             <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d4ed8"/>
@@ -210,7 +210,7 @@
         <div class="method-card">
           <span class="step">04 · Honesty</span>
           <h3>Unresolved mode</h3>
-          <p>If curvature noise crosses the stick/slip boundary, FiRCE does not invent a direction. It reports review-required frames.</p>
+          <p>If curvature noise crosses the stick/slip boundary, EnFiRCE does not invent a direction. It reports review-required frames.</p>
         </div>
       </div>
 
@@ -235,8 +235,8 @@
             <p class="caption">A naive reconstruction of the same hooked-rod motion can look physically wild even when a video exists. Shape error grows to more than 150&nbsp;mm. Matching a video is not the same as recovering forces.</p>
           </div>
           <div class="column">
-            <img class="result-figure" src="static/images/geometry_fit.png" alt="Approximate 200 mm hooked-rod geometry used in FiRCE" loading="lazy">
-            <p class="caption">FiRCE uses an explicit 200&nbsp;mm hooked-rod model (120&nbsp;mm straight, 30&nbsp;mm hook radius) rather than treating the video as recovered hardware parameters. The green overlay is that kinematic model.</p>
+            <img class="result-figure" src="static/images/geometry_fit.png" alt="Approximate 200 mm hooked-rod geometry used in EnFiRCE" loading="lazy">
+            <p class="caption">EnFiRCE uses an explicit 200&nbsp;mm hooked-rod model (120&nbsp;mm straight, 30&nbsp;mm hook radius) rather than treating the video as recovered hardware parameters. The green overlay is that kinematic model.</p>
           </div>
         </div>
       </div>
@@ -295,7 +295,7 @@
           </div>
           <div class="column">
             <img class="result-figure" src="static/images/wall_components.png" alt="Component-wise force comparison with unknown tip load" loading="lazy">
-            <p class="caption">With a nonzero unknown tip load, shape-only contact/tip RMSE jumps to 1.81 / 1.81&nbsp;N. FiRCE stays at 0.159 / 0.168&nbsp;N. The plane constraint is doing the work.</p>
+            <p class="caption">With a nonzero unknown tip load, shape-only contact/tip RMSE jumps to 1.81 / 1.81&nbsp;N. EnFiRCE stays at 0.159 / 0.168&nbsp;N. The plane constraint is doing the work.</p>
           </div>
         </div>
         <div class="columns is-centered">
@@ -414,7 +414,7 @@
       <div class="container is-max-desktop">
         <h2 class="title is-3 has-text-centered">What this page does not claim</h2>
         <div class="callout">
-          FiRCE is a reproducible simulation prototype. It is not a submitted RA-L paper, not a hardware FBG/camera system, not 50&nbsp;Hz real-time sensing, and not a proof of general noise robustness. EKF, RANSAC, and friction cones are not the claimed novelty; the working hypothesis is that environment constraints improve force split and that unidentifiable stick/slip should be reported instead of hidden.
+          EnFiRCE is a reproducible simulation prototype. It is not a submitted RA-L paper, not a hardware FBG/camera system, not 50&nbsp;Hz real-time sensing, and not a proof of general noise robustness. EKF, RANSAC, and friction cones are not the claimed novelty; the working hypothesis is that environment constraints improve force split and that unidentifiable stick/slip should be reported instead of hidden.
         </div>
         <div class="content">
           <ul>
@@ -437,12 +437,12 @@
           <span class="copy-text">Copy</span>
         </button>
       </div>
-      <pre id="bibtex-code"><code>@misc{wang2026firce,
+      <pre id="bibtex-code"><code>@misc{wang2026enfirce,
   author = {Wang, Tongyu},
-  title  = {{FiRCE}: Friction-informed Rod Contact Estimation},
+  title  = {{EnFiRCE}: Environment- and Friction-informed Rod Contact Estimation},
   year   = {2026},
   note   = {Project page},
-  url    = {https://universeleaf.github.io/firce.github.io/}
+  url    = {https://enfirce.github.io/}
 }</code></pre>
     </div>
   </section>
@@ -458,7 +458,7 @@
               <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
               adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
               Source for this site:
-              <a href="https://github.com/universeleaf/firce.github.io" target="_blank" rel="noopener">universeleaf/firce.github.io</a>.
+              <a href="https://github.com/EnFiRCE/EnFiRCE.github.io" target="_blank" rel="noopener">EnFiRCE/EnFiRCE.github.io</a>.
               MATLAB code:
               <a href="https://github.com/universeleaf/force-sensor" target="_blank" rel="noopener">universeleaf/force-sensor</a>.
               <br>
