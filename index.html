@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta name="description" content="Estimate contact and tip forces on a slender continuum rod from sparse shape measurements, base motion, and planar environment constraints.">
+  <meta name="keywords" content="continuum robot, force sensing, friction, complementarity, EKF, MAP, FBG, rod contact, Georgia Tech">
+  <meta name="author" content="Tongyu Wang">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Georgia Institute of Technology">
+  <meta property="og:title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta property="og:description" content="Estimate contact and tip forces on a slender continuum rod from sparse shape measurements and environment constraints.">
+  <meta property="og:url" content="https://universeleaf.github.io/firce.github.io/">
+  <meta property="og:image" content="https://universeleaf.github.io/firce.github.io/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FiRCE hooked-rod force estimation result">
+  <meta property="article:published_time" content="2026-09-18T00:00:00.000Z">
+  <meta property="article:author" content="Tongyu Wang">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="continuum robotics">
+  <meta property="article:tag" content="force sensing">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta name="twitter:description" content="Sparse shape + environment constraints for rod contact and tip force estimation.">
+  <meta name="twitter:image" content="https://universeleaf.github.io/firce.github.io/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="FiRCE hooked-rod force estimation result">
+
+  <meta name="citation_title" content="FiRCE: Friction-informed Rod Contact Estimation">
+  <meta name="citation_author" content="Wang, Tongyu">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="theme-color" content="#0f172a">
+
+  <title>FiRCE: Friction-informed Rod Contact Estimation</title>
+  <link rel="icon" type="image/svg+xml" href="static/images/favicon.svg">
+  <link rel="icon" type="image/png" href="static/images/favicon.png">
+  <link rel="apple-touch-icon" href="static/images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "FiRCE: Friction-informed Rod Contact Estimation",
+    "description": "Estimate contact and independent tip forces on a slender continuum rod from sparse curvature measurements and planar environment constraints.",
+    "author": [{
+      "@type": "Person",
+      "name": "Tongyu Wang",
+      "affiliation": {"@type": "Organization", "name": "Georgia Institute of Technology"}
+    }],
+    "datePublished": "2026-09-18",
+    "url": "https://universeleaf.github.io/firce.github.io/",
+    "image": "https://universeleaf.github.io/firce.github.io/static/images/social_preview.png",
+    "keywords": ["continuum robot", "force sensing", "friction", "complementarity", "EKF"],
+    "isAccessibleForFree": true
+  }
+  </script>
+</head>
+<body>
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="acronym">FiRCE</span>: Friction-informed Rod Contact Estimation
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://github.com/universeleaf" target="_blank" rel="noopener">Tongyu Wang</a>
+              </span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Georgia Institute of Technology<br>Simulation study, 2026</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/universeleaf/force-sensor" target="_blank" rel="noopener"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#teaser" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-play"></i></span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#results" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon"><i class="fas fa-chart-line"></i></span>
+                    <span>Results</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser" id="teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video poster="static/images/video_forces.png" id="tree" autoplay controls muted loop playsinline preload="metadata">
+          <source src="static/videos/teaser.mp4" type="video/mp4">
+        </video>
+        <h2 class="subtitle has-text-centered">
+          A hooked 200&nbsp;mm rod is pushed into a ceiling plane and then slid. FiRCE recovers contact force, friction, and an unknown tip load from sparse simulated FBG curvature, without using dense true shape history.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section hero is-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              A slender continuum rod bends when it touches an object. We want the forces that the object exerts on the rod, using only sparse bending measurements, commanded base motion, and a geometric model of the contact surface — not a force sensor at the contact.
+            </p>
+            <p>
+              <span class="acronym">FiRCE</span> (Friction-informed Rod Contact Estimation) treats this as a constrained inverse problem. Simulated fiber Bragg grating (FBG) samples are interpolated relative to a calibrated intrinsic curvature, then a constrained MAP / iterated EKF update estimates contact location, a polyhedral Coulomb friction force, and an independent tip load. Unilateral contact and friction complementarity are enforced when the data can resolve stick versus slip. When paired curvature noise makes that mode unidentifiable, the estimator keeps the friction cone but withholds exact tangential kinematics and flags the frame for review.
+            </p>
+            <p>
+              On calibrated, noise-free planar simulations, FiRCE recovers contact and tip forces on the hooked-rod trajectory to about 0.016&nbsp;N RMSE, and it separates a nonzero unknown tip load from body contact. A synthetic metric-depth frontend can supply the plane with covariance. All numbers on this page are offline simulations. They are not a hardware, real-time, or publication-ready claim.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="method">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <svg class="pipeline" viewBox="0 0 960 168" role="img" aria-label="FiRCE pipeline from sparse sensors to estimated forces">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#1d4ed8"/>
+          </marker>
+        </defs>
+        <rect x="8" y="36" width="170" height="88" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+        <rect x="214" y="36" width="170" height="88" rx="12" fill="#eff6ff" stroke="#bfdbfe"/>
+        <rect x="420" y="36" width="200" height="88" rx="12" fill="#fff7ed" stroke="#fed7aa"/>
+        <rect x="656" y="36" width="170" height="88" rx="12" fill="#ecfdf5" stroke="#a7f3d0"/>
+        <rect x="420" y="132" width="200" height="28" rx="8" fill="#f8fafc" stroke="#e2e8f0"/>
+        <text x="93" y="74" text-anchor="middle" font-size="14" font-family="Inter, sans-serif" font-weight="700" fill="#0f172a">Sparse FBG</text>
+        <text x="93" y="96" text-anchor="middle" font-size="12" font-family="Inter, sans-serif" fill="#475569">24 curvature samples</text>
+        <text x="299" y="74" text-anchor="middle" font-size="14" font-family="Inter, sans-serif" font-weight="700" fill="#0f172a">Shape rebuild</text>
+        <text x="299" y="96" text-anchor="middle" font-size="12" font-family="Inter, sans-serif" fill="#475569">intrinsic-delta interp.</text>
+        <text x="520" y="74" text-anchor="middle" font-size="14" font-family="Inter, sans-serif" font-weight="700" fill="#0f172a">Constrained MAP</text>
+        <text x="520" y="96" text-anchor="middle" font-size="12" font-family="Inter, sans-serif" fill="#475569">iterated EKF + SQP</text>
+        <text x="741" y="74" text-anchor="middle" font-size="14" font-family="Inter, sans-serif" font-weight="700" fill="#0f172a">Forces + mode</text>
+        <text x="741" y="96" text-anchor="middle" font-size="12" font-family="Inter, sans-serif" fill="#475569">contact, tip, friction</text>
+        <text x="520" y="151" text-anchor="middle" font-size="11" font-family="Inter, sans-serif" fill="#475569">plane / optional depth + μ</text>
+        <line x1="178" y1="80" x2="214" y2="80" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="384" y1="80" x2="420" y2="80" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="620" y1="80" x2="656" y2="80" stroke="#1d4ed8" stroke-width="2.5" marker-end="url(#arrow)"/>
+      </svg>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <span class="step">01 · Sensing</span>
+          <h3>Sparse shape only</h3>
+          <p>Inputs are 24 simulated FBG bending samples, base pose, and a plane. Dense forward shape is not passed to the estimator.</p>
+        </div>
+        <div class="method-card">
+          <span class="step">02 · Contact</span>
+          <h3>One equivalent contact</h3>
+          <p>State includes plane pose, contact arclength, normal force, friction generators, and an independent tip load.</p>
+        </div>
+        <div class="method-card">
+          <span class="step">03 · Friction</span>
+          <h3>Complementarity</h3>
+          <p>A 16-sided polyhedral cone encodes Coulomb friction on displacement increments, not velocities.</p>
+        </div>
+        <div class="method-card">
+          <span class="step">04 · Honesty</span>
+          <h3>Unresolved mode</h3>
+          <p>If curvature noise crosses the stick/slip boundary, FiRCE does not invent a direction. It reports review-required frames.</p>
+        </div>
+      </div>
+
+      <div class="eq-box">
+        f_contact = n f<sub>n</sub> + D β<br>
+        g = nᵀ (p_contact − p_plane) ≥ 0, &nbsp; f<sub>n</sub> ≥ 0, &nbsp; g f<sub>n</sub> = 0<br>
+        β ≥ 0, &nbsp; Σβ ≤ μ f<sub>n</sub>, &nbsp; w = Dᵀ v<sub>t</sub> + λ ≥ 0, &nbsp; β ∘ w = 0
+      </div>
+      <p class="caption">
+        Forces are world-frame loads on the rod, in newtons. Positions and one-step contact displacements are in millimetres. The plane normal points from the obstacle into free space.
+      </p>
+    </div>
+  </section>
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Why this is hard</h2>
+        <div class="columns is-centered is-vcentered">
+          <div class="column">
+            <img class="result-figure" src="static/images/fail_sheet.png" alt="Failed naive reconstruction of the hooked rod" loading="lazy">
+            <p class="caption">A naive reconstruction of the same hooked-rod motion can look physically wild even when a video exists. Shape error grows to more than 150&nbsp;mm. Matching a video is not the same as recovering forces.</p>
+          </div>
+          <div class="column">
+            <img class="result-figure" src="static/images/geometry_fit.png" alt="Approximate 200 mm hooked-rod geometry used in FiRCE" loading="lazy">
+            <p class="caption">FiRCE uses an explicit 200&nbsp;mm hooked-rod model (120&nbsp;mm straight, 30&nbsp;mm hook radius) rather than treating the video as recovered hardware parameters. The green overlay is that kinematic model.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="results">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Results</h2>
+      <p class="content has-text-justified">
+        The videos below are independent inverse estimates on simulated sensor packets. Playback interpolates 18 estimated frames; it is not a second solver running at video rate.
+      </p>
+      <div class="columns">
+        <div class="column">
+          <h3 class="title is-5">Hooked rod, body contact</h3>
+          <video poster="static/images/video_forces.png" controls muted loop playsinline preload="metadata">
+            <source src="static/videos/teaser.mp4" type="video/mp4">
+          </video>
+          <p class="caption">Push into a ceiling, then slide. Contact / tip / total RMSE = 0.016 / 0.017 / 0.031&nbsp;N. Maximum shape RMSE = 0.0015&nbsp;mm.</p>
+        </div>
+        <div class="column">
+          <h3 class="title is-5">Wall contact + unknown tip</h3>
+          <video poster="static/images/wall_forces.png" controls muted loop playsinline preload="metadata">
+            <source src="static/videos/wall_tip.mp4" type="video/mp4">
+          </video>
+          <p class="caption">True tip load [2, 0, −1]&nbsp;N, unknown to the estimator. Contact / tip / total RMSE = 0.159 / 0.168 / 0.014&nbsp;N. Total force can look excellent while the split is harder.</p>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column">
+          <h3 class="title is-5">Same wall, rotated 90°</h3>
+          <video poster="static/images/video_forces.png" controls muted loop playsinline preload="metadata">
+            <source src="static/videos/upward.mp4" type="video/mp4">
+          </video>
+          <p class="caption">A full 90° rotation of the wall geometry. Used as an equivariance check, not as a new physical scene.</p>
+        </div>
+        <div class="column">
+          <h3 class="title is-5">Source video used only for geometry</h3>
+          <video poster="static/images/fail_first.png" controls muted loop playsinline preload="metadata">
+            <source src="static/videos/motivation.mp4" type="video/mp4">
+          </video>
+          <p class="caption"><code>fail.mp4</code> motivated the hooked-rod dimensions. It is not a hardware experiment and is not used as a sensor stream.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Environment constraints separate the split</h2>
+        <div class="columns is-centered">
+          <div class="column">
+            <img class="result-figure" src="static/images/video_components.png" alt="Component-wise force comparison on the hooked-rod trajectory" loading="lazy">
+            <p class="caption">On the hooked rod, a shape-only ablation can win on total-force RMSE (0.011 vs 0.031&nbsp;N) while losing on the contact/tip split (0.041 / 0.034 vs 0.016 / 0.017&nbsp;N). Total force is not identifiability.</p>
+          </div>
+          <div class="column">
+            <img class="result-figure" src="static/images/wall_components.png" alt="Component-wise force comparison with unknown tip load" loading="lazy">
+            <p class="caption">With a nonzero unknown tip load, shape-only contact/tip RMSE jumps to 1.81 / 1.81&nbsp;N. FiRCE stays at 0.159 / 0.168&nbsp;N. The plane constraint is doing the work.</p>
+          </div>
+        </div>
+        <div class="columns is-centered">
+          <div class="column">
+            <img class="result-figure" src="static/images/video_friction.png" alt="Friction cone and sliding work checks" loading="lazy">
+            <p class="caption">Friction direction, cone utilization, contact step, and sliding work are checked independently of the force plot. Sliding work must not be positive.</p>
+          </div>
+          <div class="column">
+            <img class="result-figure" src="static/images/independent_components.png" alt="Independent energy-model truth comparison" loading="lazy">
+            <p class="caption">An independent planar energy model, not the original LCP, supplies a second truth for a short frictionless trajectory: contact / tip / total RMSE = 0.101 / 0.050 / 0.066&nbsp;N. Mesh refinement can still move reaction forces by ~0.10&nbsp;N, so this is not a converged continuum certificate.</p>
+          </div>
+        </div>
+
+        <div class="content">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Experiment</th>
+                <th>Frames</th>
+                <th>Contact RMSE</th>
+                <th>Tip RMSE</th>
+                <th>Total RMSE</th>
+                <th>What it shows</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Hooked rod, noise-free</td>
+                <td class="num">18</td>
+                <td class="num">0.016&nbsp;N</td>
+                <td class="num">0.017&nbsp;N</td>
+                <td class="num">0.031&nbsp;N</td>
+                <td>Calibrated planar simulation, sparse history</td>
+              </tr>
+              <tr>
+                <td>Same input, shape-only</td>
+                <td class="num">18</td>
+                <td class="num">0.041&nbsp;N</td>
+                <td class="num">0.034&nbsp;N</td>
+                <td class="num">0.011&nbsp;N</td>
+                <td>Better total, worse split</td>
+              </tr>
+              <tr>
+                <td>Wall + unknown tip</td>
+                <td class="num">18</td>
+                <td class="num">0.159&nbsp;N</td>
+                <td class="num">0.168&nbsp;N</td>
+                <td class="num">0.014&nbsp;N</td>
+                <td>Environment needed to separate loads</td>
+              </tr>
+              <tr>
+                <td>Shape-only on wall + tip</td>
+                <td class="num">18</td>
+                <td class="num">1.81&nbsp;N</td>
+                <td class="num">1.81&nbsp;N</td>
+                <td class="num">0.098&nbsp;N</td>
+                <td>Cannot split without the plane</td>
+              </tr>
+              <tr>
+                <td>Independent energy truth</td>
+                <td class="num">5</td>
+                <td class="num">0.101&nbsp;N</td>
+                <td class="num">0.050&nbsp;N</td>
+                <td class="num">0.066&nbsp;N</td>
+                <td>Frictionless; not mesh-converged</td>
+              </tr>
+              <tr>
+                <td>Curvature noise, 3 seeds</td>
+                <td class="num">6</td>
+                <td class="num">0.56–0.98&nbsp;N</td>
+                <td class="num">0.55–0.73&nbsp;N</td>
+                <td class="num">0.29–0.49&nbsp;N</td>
+                <td>Last frames unresolved; not general robustness</td>
+              </tr>
+              <tr>
+                <td>Synthetic depth, clean / noisy</td>
+                <td class="num">6</td>
+                <td class="num">0.017 / 0.385&nbsp;N</td>
+                <td class="num">0.020 / 0.273&nbsp;N</td>
+                <td class="num">0.034 / 0.252&nbsp;N</td>
+                <td>No real camera; noisy last frames unresolved</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="caption">
+            RMSE values are vector errors of world-frame forces on the rod. Do not average total-force RMSE with component RMSE, and do not mix noise-free rows with noise rows.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Depth as an environment frontend</h2>
+      <div class="columns is-centered is-vcentered">
+        <div class="column is-two-thirds">
+          <img class="result-figure" src="static/images/depth.png" alt="Synthetic metric depth image and inlier mask for plane fitting" loading="lazy">
+        </div>
+        <div class="column">
+          <div class="content">
+            <p>
+              An optional path converts a calibrated metric Z image into a plane observation, including a 6×6 covariance on point and normal. The estimator whitens that observation with the rest of the MAP residual.
+            </p>
+            <p>
+              The figure is a synthetic depth image with 0.35&nbsp;mm noise, 20% outliers, and 10% missing pixels. Plane offset error stayed below 0.013&nbsp;mm. This is not monocular RGB, not a real camera, and not scene understanding.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero is-small is-light">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">What this page does not claim</h2>
+        <div class="callout">
+          FiRCE is a reproducible simulation prototype. It is not a submitted RA-L paper, not a hardware FBG/camera system, not 50&nbsp;Hz real-time sensing, and not a proof of general noise robustness. EKF, RANSAC, and friction cones are not the claimed novelty; the working hypothesis is that environment constraints improve force split and that unidentifiable stick/slip should be reported instead of hidden.
+        </div>
+        <div class="content">
+          <ul>
+            <li>History shape is reconstructed from the previous sensor sample, not jointly marginalized into the force covariance.</li>
+            <li>One equivalent contact only; no multi-contact or full 3D surface model.</li>
+            <li>Independent frictional truth, model mismatch, and statistical coverage remain open.</li>
+            <li>MATLAB code lives in <a href="https://github.com/universeleaf/force-sensor" target="_blank" rel="noopener">universeleaf/force-sensor</a>. Entry points: <code>force('sensor-video')</code>, <code>force('sensor-tip')</code>, <code>force('noise')</code>, <code>force('depth')</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@misc{wang2026firce,
+  author = {Wang, Tongyu},
+  title  = {{FiRCE}: Friction-informed Rod Contact Estimation},
+  year   = {2026},
+  note   = {Project page},
+  url    = {https://universeleaf.github.io/firce.github.io/}
+}</code></pre>
+    </div>
+  </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the
+              <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank" rel="noopener">Academic Project Page Template</a>,
+              adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a> project page.
+              Source for this site:
+              <a href="https://github.com/universeleaf/firce.github.io" target="_blank" rel="noopener">universeleaf/firce.github.io</a>.
+              MATLAB code:
+              <a href="https://github.com/universeleaf/force-sensor" target="_blank" rel="noopener">universeleaf/force-sensor</a>.
+              <br>
+              This website is licensed under a
+              <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
