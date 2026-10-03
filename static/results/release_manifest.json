@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "releaseDate": "2026-10-04",
+  "publicationRunId": "3ee78967-a1c8-4565-a3d0-b4c97cda85da",
+  "artifacts": [
+    {
+      "source": "out/benchmarks/publication/figures/matched_baselines.svg",
+      "websitePath": "static/results/matched_baselines.svg",
+      "sha256": "e95a01bd1eea046429368e74121d757e7221ccbccfc20566a3ada6a62305a2ef",
+      "bytes": 83934,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/matched_baselines.png",
+      "websitePath": "static/results/matched_baselines.png",
+      "sha256": "19871288ffba115740c134ffeec791bddbbba10e495fc98670c22206d0bece50",
+      "bytes": 138522,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/matched_baselines.pdf",
+      "websitePath": "static/results/matched_baselines.pdf",
+      "sha256": "a8427b8abe87c7c575087573e8ae6fdaeba21f217c1d5cc98ac181fab264ccd9",
+      "bytes": 41450,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/contact_magnitudes.svg",
+      "websitePath": "static/results/contact_magnitudes.svg",
+      "sha256": "2ac21412840c8c40e3027f65196e6a67da3e9392e0c5b7e743190b53c08d9f10",
+      "bytes": 25350,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/contact_magnitudes.png",
+      "websitePath": "static/results/contact_magnitudes.png",
+      "sha256": "3d19f49178d36c4a83135b921ee998cb14b3ef85433fef4630048abb25526bc6",
+      "bytes": 59319,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/contact_magnitudes.pdf",
+      "websitePath": "static/results/contact_magnitudes.pdf",
+      "sha256": "4d3ec1eccb1636488d7eb50ebcafcf55cbdf0c70aca588deee791b3930641cb9",
+      "bytes": 21132,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/method_overview.svg",
+      "websitePath": "static/results/method_overview.svg",
+      "sha256": "9b7b1088a0b516e73fa7022e39e3c6a033461bcd2e210ca6018db85fd08af3fc",
+      "bytes": 15687,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/method_overview.png",
+      "websitePath": "static/results/method_overview.png",
+      "sha256": "9fde1916ed3ef6e51024052d5011059df3e5c8e93676dd5062bacd94569d5169",
+      "bytes": 94577,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/method_overview.pdf",
+      "websitePath": "static/results/method_overview.pdf",
+      "sha256": "9b8af3cd586363a74061d6d1c47fbe4d3004659e1f2babbdaafe75e7ca92be9b",
+      "bytes": 25596,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/local_uncertainty.svg",
+      "websitePath": "static/results/local_uncertainty.svg",
+      "sha256": "66d7ab529f2ed3f16e10d5f9a83dc083f800500e3adccffe6c4c38fa356ff9d8",
+      "bytes": 17341,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/local_uncertainty.png",
+      "websitePath": "static/results/local_uncertainty.png",
+      "sha256": "8f0a782a88a227d5e8be4222438a55195938ac39da61045f5322733d9610bdb1",
+      "bytes": 42896,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figures/local_uncertainty.pdf",
+      "websitePath": "static/results/local_uncertainty.pdf",
+      "sha256": "9c42c0f8c40e970b363794ecf0eff4086a02ebacc8d29de8ff46b0b467b93d3f",
+      "bytes": 19053,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/figures/factor_accuracy.svg",
+      "websitePath": "static/results/factor_accuracy.svg",
+      "sha256": "8aa5a27bee1447c2ac2aa8e5ca39307ecef7d349b615c6c03a6643a165b7e66b",
+      "bytes": 38731,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/figures/factor_accuracy.png",
+      "websitePath": "static/results/factor_accuracy.png",
+      "sha256": "ce359b6b0663ae0608c212fd577214ff6fbf5ef5acdf2b5332868539803976f9",
+      "bytes": 220238,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/figures/factor_accuracy.pdf",
+      "websitePath": "static/results/factor_accuracy.pdf",
+      "sha256": "c5baa4c94435b98adb66bd7139fcf238683aebe4867b3f5997028cf4571f83a1",
+      "bytes": 20355,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/figures/coverage_runtime.svg",
+      "websitePath": "static/results/coverage_runtime.svg",
+      "sha256": "f00ecacd0064de0346cfe33274ef6e7e925d60059e0db4268a621f48fef0e668",
+      "bytes": 34078,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/figures/coverage_runtime.png",
+      "websitePath": "static/results/coverage_runtime.png",
+      "sha256": "b37e469cef2d64123aa395d4d800148de86e5ac1a698b26a55bdc9c87f8df313",
+      "bytes": 94739,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/figures/coverage_runtime.pdf",
+      "websitePath": "static/results/coverage_runtime.pdf",
+      "sha256": "2db09d64bc8e61971084919ea2a8075d1e4dbcbd8ecdb9da567b8e8ef8c3f294",
+      "bytes": 23740,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/literature/figures/solved_contact_geometry.svg",
+      "websitePath": "static/results/solved_contact_geometry.svg",
+      "sha256": "d7467b687b25b16b05bddaff7041d7cdcca56e74cf4eace4dc6f6e12898e3ffe",
+      "bytes": 45764,
+      "scope": "Historical completed full-window solved geometry; not a newly generated window."
+    },
+    {
+      "source": "out/benchmarks/literature/figures/solved_contact_geometry.png",
+      "websitePath": "static/results/solved_contact_geometry.png",
+      "sha256": "7d580dacee17a65dbfe857b646b87a9ba083eea1354d2f8256f461d469e70b55",
+      "bytes": 163849,
+      "scope": "Historical completed full-window solved geometry; not a newly generated window."
+    },
+    {
+      "source": "out/benchmarks/literature/figures/solved_contact_geometry.pdf",
+      "websitePath": "static/results/solved_contact_geometry.pdf",
+      "sha256": "c289d81c9df223bb0efbd5e764fdf3171af1e330a7a97fc747b62ff0928e3412",
+      "bytes": 39576,
+      "scope": "Historical completed full-window solved geometry; not a newly generated window."
+    },
+    {
+      "source": "out/benchmarks/publication/paired_source_data.csv",
+      "websitePath": "static/results/paired_source_data.csv",
+      "sha256": "02a5fb1d263a47cf28e9a3377f9f7fd3ad9652acfc93a277fa9e251b1b063109",
+      "bytes": 18860,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/contact_magnitude_source_data.csv",
+      "websitePath": "static/results/contact_magnitude_source_data.csv",
+      "sha256": "6392f2059d26be1aca2cd185a7d66ac199669e602350fafe03b0385f529c9681",
+      "bytes": 1860,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/paired_summary.json",
+      "websitePath": "static/results/paired_summary.json",
+      "sha256": "7a804b29b4e4480bcec9d2ec860ee813556199e97d62f7fe22f223451ca7bb1e",
+      "bytes": 21513,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/figure_provenance.json",
+      "websitePath": "static/results/figure_provenance.json",
+      "sha256": "2489a7b113b5dd3378ad5316e237433d9119b0313b774a845ca2de72427cc949",
+      "bytes": 3659,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/completion.json",
+      "websitePath": "static/results/completion.json",
+      "sha256": "434c49d16b4bda55df9dd2e3790eb4e846fe24b9463a95a58649006fa476475b",
+      "bytes": 29427,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/runtime_host.json",
+      "websitePath": "static/results/runtime_host.json",
+      "sha256": "d472057561fefedcae67898e882842ba93c6d483c3e454cec2d5cb6c41b83c8f",
+      "bytes": 974,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/source_data.csv",
+      "websitePath": "static/results/factor_source_data.csv",
+      "sha256": "005c875b52497f9a5f555176e0e401ce5934c75abb1ae84c739eb64bed6b6568",
+      "bytes": 24139,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_factors/plot_provenance.json",
+      "websitePath": "static/results/factor_plot_provenance.json",
+      "sha256": "e7651da4496efe560b0db95e4d06dcd02b6eee66a139bac321c254b6ce1e0672",
+      "bytes": 55477,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/formulation_derivatives/comparison.json",
+      "websitePath": "static/results/derivative_comparison.json",
+      "sha256": "9c25b70358cc6a4e0167d89e1bdb7db5f88d5af6ef2e1ab670d15d5ac05aa19a",
+      "bytes": 42180,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/publication/EnFiRCE_draft.pdf",
+      "websitePath": "static/results/EnFiRCE_draft.pdf",
+      "sha256": "5d70480606c7464ecbdc55b680826749a6f7cc762a1954acb9cf797a04a11d0a",
+      "bytes": 417538,
+      "scope": "Compiled research draft; author information unset."
+    },
+    {
+      "source": "out/benchmarks/publication/manuscript_build.json",
+      "websitePath": "static/results/manuscript_build.json",
+      "sha256": "475781c5c017bcccf3c2923729d730a1dda82a5cfb3f4996e8f3ee16d9386154",
+      "bytes": 2977,
+      "scope": ""
+    },
+    {
+      "source": "out/demos/latest/comparison.json",
+      "websitePath": "static/results/single_contact_video_ledger.json",
+      "sha256": "ef6fa50f93c37d1dc61bebf469e74ebdf423aaec2e41af667a406a756c005347",
+      "bytes": 73627,
+      "scope": ""
+    },
+    {
+      "source": "out/demos/multi_contact/comparison.json",
+      "websitePath": "static/results/multi_contact_video_ledger.json",
+      "sha256": "fe079d4a57442bada0860c0706df53ba43d86f0585d3c5732029f1652581f14c",
+      "bytes": 36364,
+      "scope": ""
+    },
+    {
+      "source": "out/demos/latest/ceiling_hook/forces.mp4",
+      "websitePath": "static/results/ceiling_hook.mp4",
+      "sha256": "9c89c0a0e4f43ddc67cb821a908107fb91ac29c02ea44b3a0820dd3032ce2e22",
+      "bytes": 515921,
+      "scope": "Historical single-contact 3-D estimator; 12 independently solved states, 60 playback frames."
+    },
+    {
+      "source": "out/demos/multi_contact/s_channel_two_contact/forces.mp4",
+      "websitePath": "static/results/s_channel_two_contact.mp4",
+      "sha256": "22f1f83478ef77438f446b5a4be5545e4c9bdc5ecbb2d775f9a344ff16101de5",
+      "bytes": 316262,
+      "scope": "Planar frictionless known-contact-order sparse-curvature inverse; model-consistent numerical demonstration."
+    },
+    {
+      "source": "out/demos/multi_contact/tapered_channel_two_contact/forces.mp4",
+      "websitePath": "static/results/tapered_channel_two_contact.mp4",
+      "sha256": "3c98ed51fa1d5eec28cc7ae01b88f1d09b3e4cbf0b22224bdf5f70de5598d1c1",
+      "bytes": 332723,
+      "scope": "Planar frictionless known-contact-order sparse-curvature inverse; model-consistent numerical demonstration."
+    },
+    {
+      "source": "out/demos/multi_contact/serpentine_three_contact/forces.mp4",
+      "websitePath": "static/results/serpentine_three_contact.mp4",
+      "sha256": "d7ab55e4f4d8e4560d80277b1e649b1de82876fcf576a059704c68c2c444eaf0",
+      "bytes": 334932,
+      "scope": "Planar frictionless known-contact-order sparse-curvature inverse; model-consistent numerical demonstration."
+    }
+  ],
+  "summarySha256": "c42374ad69cad2b70b332ec9e9fce74aad718e377e5f919b7225219b1c49d5f7",
+  "manuscriptSourceSha256": "7f73b24754fb34d3a59894057c4e94a354a7f721f7c0747d1d235e7ac40396f2",
+  "bibliographySha256": "70da50d9d04601fe323728684c12bdb773bc741ceaad8fa5d57501be93ab5a1d",
+  "releaseScriptSha256": "4462960372e2aabf24e7a1cf713a0d3f4a9046f0008476e94d3c7ab736f57602",
+  "scope": "Byte copies of completed scientific results and archived continuous simulation videos; no inferred/interpolated quantitative results."
+}

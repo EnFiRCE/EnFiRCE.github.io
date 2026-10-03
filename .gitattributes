@@ -1,0 +1,2 @@
+# Scientific result bytes must match the archived release manifest.
+static/results/** -text whitespace=trailing-space,space-before-tab,cr-at-eol

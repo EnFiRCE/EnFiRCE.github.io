@@ -1,0 +1,281 @@
+{
+  "state": "complete",
+  "releaseDate": "2026-10-04",
+  "factorRuns": 108,
+  "baselineRuns": 36,
+  "pairedPackets": 18,
+  "engineeringChecks": 36,
+  "factorExceptions": 0,
+  "factorNonpositiveExits": 3,
+  "baselineExceptions": 0,
+  "baselineNonpositiveExits": 2,
+  "nominalGroups": [
+    {
+      "scene": "spatial_sliding",
+      "noiseStdPerMm": 2.5e-05,
+      "method": "full",
+      "windowCount": 3,
+      "reviewFrames": 3,
+      "nonpositiveExits": 0,
+      "contactRmseN": {
+        "mean": 0.28786876220208696,
+        "min": 0.13124195985225048,
+        "max": 0.4278829223781683,
+        "eligible": 3
+      },
+      "tipRmseN": {
+        "mean": 0.25130789269618803,
+        "min": 0.10391138215060969,
+        "max": 0.39538134018010107,
+        "eligible": 3
+      },
+      "totalRmseN": {
+        "mean": 0.31136988084226985,
+        "min": 0.1637333009773225,
+        "max": 0.44820717051449926,
+        "eligible": 3
+      },
+      "arcRmseMm": {
+        "mean": 0.020113132703935024,
+        "min": 0.013888453060397512,
+        "max": 0.027958495410214754,
+        "eligible": 3
+      },
+      "magnitudeMaeN": {
+        "mean": 0.23907042649070145,
+        "min": 0.08771824735649236,
+        "max": 0.348676455229755,
+        "eligible": 3
+      },
+      "wallSeconds": {
+        "mean": 151.79176123333335,
+        "min": 121.9980996,
+        "max": 178.938047,
+        "eligible": 3
+      }
+    },
+    {
+      "scene": "spatial_sliding",
+      "noiseStdPerMm": 2.5e-05,
+      "method": "gaussian",
+      "windowCount": 3,
+      "reviewFrames": 1,
+      "nonpositiveExits": 1,
+      "contactRmseN": {
+        "mean": 0.6070357231501443,
+        "min": 0.4016924399747582,
+        "max": 0.909218447325401,
+        "eligible": 3
+      },
+      "tipRmseN": {
+        "mean": 0.6806882721203289,
+        "min": 0.4125549102966123,
+        "max": 0.9950946923161448,
+        "eligible": 3
+      },
+      "totalRmseN": {
+        "mean": 0.7097376126817488,
+        "min": 0.4434454168916655,
+        "max": 1.0148045642661399,
+        "eligible": 3
+      },
+      "arcRmseMm": {
+        "mean": 0.11958885771432114,
+        "min": 0.08616480028939538,
+        "max": 0.18174599121021473,
+        "eligible": 3
+      },
+      "magnitudeMaeN": {
+        "mean": 0.5417480668270489,
+        "min": 0.3587687187344635,
+        "max": 0.8632645511853267,
+        "eligible": 3
+      },
+      "wallSeconds": {
+        "mean": 28.990495633333335,
+        "min": 25.3918466,
+        "max": 30.9034019,
+        "eligible": 3
+      }
+    },
+    {
+      "scene": "spatial_sliding",
+      "noiseStdPerMm": 2.5e-05,
+      "method": "point",
+      "windowCount": 3,
+      "reviewFrames": 0,
+      "nonpositiveExits": 0,
+      "contactRmseN": {
+        "mean": 2.4905855540190056,
+        "min": 2.042826501207608,
+        "max": 2.907213521396421,
+        "eligible": 3
+      },
+      "tipRmseN": {
+        "mean": 0.5899083942369698,
+        "min": 0.22317631236205546,
+        "max": 0.8770542570518758,
+        "eligible": 3
+      },
+      "totalRmseN": {
+        "mean": 2.655255946923945,
+        "min": 2.0297174125495667,
+        "max": 3.109795107880078,
+        "eligible": 3
+      },
+      "arcRmseMm": {
+        "mean": 0.17358378215363232,
+        "min": 0.1081740785534615,
+        "max": 0.20775354526433878,
+        "eligible": 3
+      },
+      "magnitudeMaeN": {
+        "mean": 0.5637969397743493,
+        "min": 0.3595607866964201,
+        "max": 0.7787813811810365,
+        "eligible": 3
+      },
+      "wallSeconds": {
+        "mean": 8.783385033333333,
+        "min": 7.007384,
+        "max": 9.9772293,
+        "eligible": 3
+      }
+    },
+    {
+      "scene": "three_contact",
+      "noiseStdPerMm": 2.5e-05,
+      "method": "full",
+      "windowCount": 3,
+      "reviewFrames": 0,
+      "nonpositiveExits": 0,
+      "contactRmseN": {
+        "mean": 0.21517973416142577,
+        "min": 0.09833120180775692,
+        "max": 0.3231277766734747,
+        "eligible": 3
+      },
+      "tipRmseN": {
+        "mean": 0.29945599983557947,
+        "min": 0.17265466779013347,
+        "max": 0.40524507095752843,
+        "eligible": 3
+      },
+      "totalRmseN": {
+        "mean": 0.34105950906746946,
+        "min": 0.22854679293778082,
+        "max": 0.45250310153334344,
+        "eligible": 3
+      },
+      "arcRmseMm": {
+        "mean": 0.024904093560587995,
+        "min": 0.012241722947831804,
+        "max": 0.03642072498476533,
+        "eligible": 3
+      },
+      "magnitudeMaeN": {
+        "mean": 0.18493136882706265,
+        "min": 0.06479296729934703,
+        "max": 0.29149789767952594,
+        "eligible": 3
+      },
+      "wallSeconds": {
+        "mean": 147.57457476666667,
+        "min": 145.4930207,
+        "max": 149.8799164,
+        "eligible": 3
+      }
+    },
+    {
+      "scene": "three_contact",
+      "noiseStdPerMm": 2.5e-05,
+      "method": "gaussian",
+      "windowCount": 3,
+      "reviewFrames": 1,
+      "nonpositiveExits": 1,
+      "contactRmseN": {
+        "mean": 0.7796895056050711,
+        "min": 0.6779007934002744,
+        "max": 0.9561384850119371,
+        "eligible": 3
+      },
+      "tipRmseN": {
+        "mean": 0.9888228750451953,
+        "min": 0.8899986945692363,
+        "max": 1.1504269145188009,
+        "eligible": 3
+      },
+      "totalRmseN": {
+        "mean": 1.0037363144021805,
+        "min": 0.90191310371945,
+        "max": 1.163771411500818,
+        "eligible": 3
+      },
+      "arcRmseMm": {
+        "mean": 0.19361819372872588,
+        "min": 0.14975606967990268,
+        "max": 0.2545440196033443,
+        "eligible": 3
+      },
+      "magnitudeMaeN": {
+        "mean": 0.6425669408836341,
+        "min": 0.47246700479194903,
+        "max": 0.7786713276716387,
+        "eligible": 3
+      },
+      "wallSeconds": {
+        "mean": 59.6196736,
+        "min": 52.8392888,
+        "max": 68.4228702,
+        "eligible": 3
+      }
+    },
+    {
+      "scene": "three_contact",
+      "noiseStdPerMm": 2.5e-05,
+      "method": "point",
+      "windowCount": 3,
+      "reviewFrames": 0,
+      "nonpositiveExits": 0,
+      "contactRmseN": {
+        "mean": 3.1418736512727166,
+        "min": 3.001014300476147,
+        "max": 3.326976421920985,
+        "eligible": 3
+      },
+      "tipRmseN": {
+        "mean": 2.4692372859901437,
+        "min": 1.4200703093157248,
+        "max": 4.244397273176172,
+        "eligible": 3
+      },
+      "totalRmseN": {
+        "mean": 2.1471656811924054,
+        "min": 1.37726166172303,
+        "max": 3.4074464956320654,
+        "eligible": 3
+      },
+      "arcRmseMm": {
+        "mean": 0.9279795252137495,
+        "min": 0.7023471669134956,
+        "max": 1.1123319137029795,
+        "eligible": 3
+      },
+      "magnitudeMaeN": {
+        "mean": 0.9086372186230567,
+        "min": 0.5600774421458846,
+        "max": 1.2477783417167105,
+        "eligible": 3
+      },
+      "wallSeconds": {
+        "mean": 26.8658989,
+        "min": 25.9927043,
+        "max": 27.5834976,
+        "eligible": 3
+      }
+    }
+  ],
+  "comparisonConclusion": "At nominal noise, EnFiRCE has lower seed-mean contact-vector error in 4 of 4 scene/baseline comparisons. Tip and total-force errors are reported separately; this controlled result is not a universal performance ranking.",
+  "publicationRunId": "3ee78967-a1c8-4565-a3d0-b4c97cda85da",
+  "sotaEstablished": false
+}
