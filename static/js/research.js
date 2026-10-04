@@ -27,6 +27,24 @@ async function loadResults() {
       }
       body.appendChild(tr);
     }
+    if (data.additionalComparison) {
+      const names = {parallel_channel: "Parallel channel", tapered_channel: "Tapered channel",
+        wider_channel: "Wider channel", serpentine_tip_load: "Serpentine / tip load",
+        longer_serpentine: "Longer serpentine", spatial_sparse: "Spatial / 12 observations"};
+      const methods = {...methodNames, no_geometry: "No contact geometry"};
+      const extra = document.getElementById("additional-rows");
+      for (const row of data.additionalComparison.groups) {
+        const tr = document.createElement("tr");
+        if (row.method === "full") tr.className = "enfirce";
+        for (const value of [names[row.scene], methods[row.method],
+          row.contactRmseN?.toFixed(3) ?? "unmatched", row.tipRmseN?.toFixed(3) ?? "unavailable",
+          row.totalRmseN?.toFixed(3) ?? "unavailable", row.matched + "/" + row.attempted, row.nonpositiveExits]) {
+          const cell = document.createElement("td"); cell.textContent = String(value); tr.appendChild(cell);
+        }
+        extra.appendChild(tr);
+      }
+      document.getElementById("additional-conclusion").textContent = data.additionalComparison.conclusion;
+    }
     document.getElementById("comparison-conclusion").textContent = data.comparisonConclusion;
     document.getElementById("release-date").textContent = "Results updated " + data.releaseDate + ".";
     status.textContent = data.pairedPackets + " archived packets × 3 methods; 3 noise draws per noisy condition, with identical clean controls. "

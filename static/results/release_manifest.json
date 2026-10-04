@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "releaseDate": "2026-10-04",
+  "releaseDate": "2026-10-05",
   "publicationRunId": "3ee78967-a1c8-4565-a3d0-b4c97cda85da",
   "artifacts": [
     {
@@ -216,15 +216,15 @@
     {
       "source": "out/benchmarks/publication/EnFiRCE_draft.pdf",
       "websitePath": "static/results/EnFiRCE_draft.pdf",
-      "sha256": "5d70480606c7464ecbdc55b680826749a6f7cc762a1954acb9cf797a04a11d0a",
-      "bytes": 417538,
+      "sha256": "c5fe19914a60250c8b095ff670238153e0bd26012dcd12ff7af293afdbb9de44",
+      "bytes": 448486,
       "scope": "Compiled research draft; author information unset."
     },
     {
       "source": "out/benchmarks/publication/manuscript_build.json",
       "websitePath": "static/results/manuscript_build.json",
-      "sha256": "475781c5c017bcccf3c2923729d730a1dda82a5cfb3f4996e8f3ee16d9386154",
-      "bytes": 2977,
+      "sha256": "6671c2509a14b25e9335553a853c7787a7fbaa5ec581ff266744f4ea22f97760",
+      "bytes": 3145,
       "scope": ""
     },
     {
@@ -268,11 +268,172 @@
       "sha256": "d7ab55e4f4d8e4560d80277b1e649b1de82876fcf576a059704c68c2c444eaf0",
       "bytes": 334932,
       "scope": "Planar frictionless known-contact-order sparse-curvature inverse; model-consistent numerical demonstration."
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_accuracy.svg",
+      "websitePath": "static/results/generalization_accuracy.svg",
+      "sha256": "b21c20a85329a77084dafd143018bc1b9ab77691deb6a3b49c2623341c98f7be",
+      "bytes": 70731,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_accuracy.png",
+      "websitePath": "static/results/generalization_accuracy.png",
+      "sha256": "aaeed33a98ce861bcd5af7085f99f0656cb54d6709d3d3717035e1d802e886d2",
+      "bytes": 106124,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_accuracy.pdf",
+      "websitePath": "static/results/generalization_accuracy.pdf",
+      "sha256": "ede2a1a892d55c8e1b20d68abd2fd78d758a0302560b8a6b315ebc62242d93bb",
+      "bytes": 28732,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_geometry.svg",
+      "websitePath": "static/results/generalization_geometry.svg",
+      "sha256": "df63af988d8449aa602d45c44d7d216fd920810f26f790aef8788d073a6ca5d0",
+      "bytes": 110226,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_geometry.png",
+      "websitePath": "static/results/generalization_geometry.png",
+      "sha256": "0d758792e7d7def72bae4487cc1ff8fc2e4dc0dedff7bd79f484444cdec9d7d6",
+      "bytes": 140080,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_geometry.pdf",
+      "websitePath": "static/results/generalization_geometry.pdf",
+      "sha256": "aecf476fd24bf4ba912806170ed7fa21755512e6f5e7fc07164fbb5359c53a9d",
+      "bytes": 40472,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_magnitudes.svg",
+      "websitePath": "static/results/generalization_magnitudes.svg",
+      "sha256": "1363a5b39cd0aedbb16cfcb902059dcaa93017a6f7fda2a126bbe84103d1a1f0",
+      "bytes": 142057,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_magnitudes.png",
+      "websitePath": "static/results/generalization_magnitudes.png",
+      "sha256": "92c35700df6af8a6008a4391810f946a0d92c38e694db9bd584774c64593527f",
+      "bytes": 136655,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_magnitudes.pdf",
+      "websitePath": "static/results/generalization_magnitudes.pdf",
+      "sha256": "79be7ac8a4d2425ea0876cc2cf046c76b794e54b568c5ea40236ae791e845403",
+      "bytes": 41583,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_load_errors.svg",
+      "websitePath": "static/results/generalization_load_errors.svg",
+      "sha256": "bdf108a686f264ec02e043e76704b7d08f27c60614c2d1de228d6d0357f21d9f",
+      "bytes": 99793,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_load_errors.png",
+      "websitePath": "static/results/generalization_load_errors.png",
+      "sha256": "37ef1dbb8867cb35906ee4f742986a402a0eb701edbd82086e56e07d308739a9",
+      "bytes": 84259,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/figures/generalization_load_errors.pdf",
+      "websitePath": "static/results/generalization_load_errors.pdf",
+      "sha256": "fc06f66a88dcef4979dfb04a2408c1041f2270fabe22836d63cddc1ef17baa57",
+      "bytes": 44454,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/source_data.csv",
+      "websitePath": "static/results/generalization_source_data.csv",
+      "sha256": "a5854a66015b1ff081322aaeeb6fe2f21f9990249edab45d2bf4584c872645ff",
+      "bytes": 22708,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/force_data.csv",
+      "websitePath": "static/results/generalization_force_data.csv",
+      "sha256": "3adee47dde6696bf2be3b55c62d0f78eb20ba6dd1fdc09e92fe7ca8826e98eba",
+      "bytes": 25515,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/summary.json",
+      "websitePath": "static/results/generalization_summary.json",
+      "sha256": "25001bcea2c8f791435b444031e2930c2b22386897be8794496f2ac9e11c8922",
+      "bytes": 17576,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/plot_provenance.json",
+      "websitePath": "static/results/generalization_plot_provenance.json",
+      "sha256": "5cf3a8721e4dca3defee0ea46a68e6cd3ae8cff7218863b6aff614f2444cb2c0",
+      "bytes": 75453,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/fixture_diagnostics.json",
+      "websitePath": "static/results/generalization_fixture_diagnostics.json",
+      "sha256": "0ff204434e142e70a35783e7020e0f525e7274d820e3d5b3ad48abad4e412863",
+      "bytes": 747,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/parallel_channel/comparison.json",
+      "websitePath": "static/results/generalization_parallel_channel_comparison.json",
+      "sha256": "e0b89bbaf6831e167169719ff1165c42941711bf4164487cecc64ece33421be9",
+      "bytes": 107322,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/tapered_channel/comparison.json",
+      "websitePath": "static/results/generalization_tapered_channel_comparison.json",
+      "sha256": "37660fd5a5d8257fb7aada824c7520b20e4209751858471c8d503facfeb11097",
+      "bytes": 107345,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/wider_channel/comparison.json",
+      "websitePath": "static/results/generalization_wider_channel_comparison.json",
+      "sha256": "45d8b061f2aa429151957b020097b3c4c0e683636d87e6a1070e0f4866f518e7",
+      "bytes": 107319,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/serpentine_tip_load/comparison.json",
+      "websitePath": "static/results/generalization_serpentine_tip_load_comparison.json",
+      "sha256": "849727197e23e73b6276a538c5c3694f4cacddeba3b946337dcfee971621cb77",
+      "bytes": 113505,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/longer_serpentine/comparison.json",
+      "websitePath": "static/results/generalization_longer_serpentine_comparison.json",
+      "sha256": "46a857e6d97ed828d507c1431e0059d06653783ba4d0a8b038b6d8707c419f9f",
+      "bytes": 113415,
+      "scope": ""
+    },
+    {
+      "source": "out/benchmarks/generalization/v1/spatial_sparse/comparison.json",
+      "websitePath": "static/results/generalization_spatial_sparse_comparison.json",
+      "sha256": "eca302e938aac7c71f54667ab82a45bc7b4ca427c9e776401972db956c3f7115",
+      "bytes": 115641,
+      "scope": ""
     }
   ],
-  "summarySha256": "c42374ad69cad2b70b332ec9e9fce74aad718e377e5f919b7225219b1c49d5f7",
-  "manuscriptSourceSha256": "7f73b24754fb34d3a59894057c4e94a354a7f721f7c0747d1d235e7ac40396f2",
+  "summarySha256": "1b31b91b86ac5210f752dee602a8dcd1e5b064c1250cc55f9581ff1e27f2704d",
+  "manuscriptSourceSha256": "4749f1cd1fc80fee81dbe2db5136844aa7c92897826bd6a50365ad1f087af9cf",
   "bibliographySha256": "70da50d9d04601fe323728684c12bdb773bc741ceaad8fa5d57501be93ab5a1d",
-  "releaseScriptSha256": "4462960372e2aabf24e7a1cf713a0d3f4a9046f0008476e94d3c7ab736f57602",
+  "releaseScriptSha256": "f4d06413f53e903c01033d6abacc40a9bace29a61fc1d27953de32a58e3eae81",
   "scope": "Byte copies of completed scientific results and archived continuous simulation videos; no inferred/interpolated quantitative results."
 }
